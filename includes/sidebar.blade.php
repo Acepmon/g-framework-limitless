@@ -6,8 +6,8 @@
         <div class="sidebar-user">
             <div class="category-content">
                 <div class="media">
-                    <a href="{{ (Auth::user()->avatar)?'/storage/'.Auth::user()->avatar:'/assets/images/placeholder.jpg'}}" target="_blank" class="media-left">
-                        <img src="{{ (Auth::user()->avatar)?'/storage/'.Auth::user()->avatar:'/assets/images/placeholder.jpg'}}" class="img-circle img-sm" alt="">
+                    <a href="{{ (Auth::user()->avatar)?'/storage/'.Auth::user()->avatar:asset('limitless/images/placeholder.jpg')}}" target="_blank" class="media-left">
+                        <img src="{{ (Auth::user()->avatar)?'/storage/'.Auth::user()->avatar:asset('limitless/images/placeholder.jpg')}}" class="img-circle img-sm" alt="">
                     </a>
                     <div class="media-body">
                         <span class="media-heading text-semibold">{{ Auth::user()->name }}</span>
@@ -34,7 +34,7 @@
                 <ul class="navigation navigation-alt navigation-accordion">
 
                     @if(true)
-                        @each('admin.includes.sidemenus', Auth::user()->menus->where('parent_id', NULL), 'menu')
+                        @each('themes.limitless.includes.sidemenus', Auth::user()->menus->where('parent_id', NULL), 'menu')
                     @else
                     <li class="navigation-header"><span>Overview</span> <i class="icon-menu" title="Overview"></i></li>
                     <li><a href="/admin/dashboard"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
